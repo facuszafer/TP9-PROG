@@ -1,31 +1,52 @@
-@foreach(ropa item in ViewBag.ListadoRopa)
+@foreach (ropa item in ViewBag.ListadoRopa)
 {
-    <div class="col-md-8 ">
-        <div class="card" style="width: 18rem;">
-          <img src="/img/@item.Foto" class="card-img-top" alt="...">  
-          <div class="card-body">
-            <h1 class="card-title"><u>@item.Nombre</u></h1>
-            <h4> @item.descripcion</h4>
-            <h3><b> $@item.precio</b></h3>
-            
-          </div>
+  <div class="col-md-8 ">
+    <div class="card" style="width: 18rem;">
+      <img src="/img/@item.Foto" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h1 class="card-title"><u>@item.Nombre</u></h1>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalle('@item.descripcion')">
+          descripcion
+        </button>
+        <h3><b>$@item.precio</b></h3>
+
+      </div>
+    </div>
+  </div>
+}
+  <div class="modal fade" id="ModalRopa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="descripcionMarca">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="descripcionMarca">
+          dsa
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
-}
+    </div>
+  </div>
 
- <form>
-     <input type="hidden" name="IdRopa">|
-     <h5>Agregue una foto de la indumentaria:</h5>
-     <input type="file" name="Foto">
-     <h5>Agregue un nombre de la indumentaria:</h5>
-     <input type="text" name="Nombre">
-     <h5>Agregue una descripcion de la indumentaria:</h5>
-     <input type="text" name="descripcion">
-     <h5>Agregue un precio de la indumentaria:</h5>
-     <input type="text" name="precio">
+<!--<form>
+  <input type="hidden" name="IdRopa">|
+  <h5>Agregue una foto de la indumentaria:</h5>
+  <input type="file" name="Foto">
+  <h5>Agregue un nombre de la indumentaria:</h5>
+  <input type="text" name="Nombre">
+  <h5>Agregue una descripcion de la indumentaria:</h5>
+  <input type="text" name="descripcion">
+  <h5>Agregue un precio de la indumentaria:</h5>
+  <input type="text" name="precio">
 
- </form>
+</form>
 
-     <input type="hidden" name="#" value="1">
-    <input type="submit" value="Aceptar">
-    
+<input type="hidden" name="#" value="1">
+<input type="submit" value="Aceptar"-->
+
+

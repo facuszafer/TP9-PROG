@@ -37,6 +37,11 @@ public class HomeController : Controller
         ViewBag.ListadoRopa = BD.ListarRopar(IdMarca);
         return View();
     }
+    public marca VerDetalleMarcaAjax(int IdMarca)
+    {
+        ViewBag.Marca = BD.ListarMarca(IdMarca);
+        return ViewBag.Marca;
+    }
     public IActionResult AgregarRopa(int IdMarca)
     {
         ViewBag.IdMarca = IdMarca;
