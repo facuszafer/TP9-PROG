@@ -8,7 +8,7 @@ namespace TP9
     
     public static class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-019;DataBase=TP9;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-042;DataBase=TP9;Trusted_Connection=True;";
 
         public static int agregarRopa(ropa rop)
         {
@@ -16,8 +16,8 @@ namespace TP9
             
             using(SqlConnection DB = new SqlConnection(_connectionString))
             {
-                string sql = "INSERT INTO ropa(Nombre, precio, Foto, IdMarca) values(pNombre, pprecio, Foto, pIdMarca)";
-                nuevaRopa=DB.Execute(sql, new {pNombre = rop.Nombre, pPrecio = rop.precio, pFoto = rop.Foto, pIdMarca = rop.IdMarca});
+                string sql = "INSERT INTO ropa(Nombre, precio, descripcion, Foto, IdMarca) values(pNombre, pprecio, pdescripcion, pFoto, pIdMarca)";
+                nuevaRopa=DB.Execute(sql, new {pNombre = rop.Nombre, pprecio = rop.precio, pdescripcion = rop.descripcion, pFoto = rop.Foto, pIdMarca = rop.IdMarca});
             }
             return nuevaRopa;
             

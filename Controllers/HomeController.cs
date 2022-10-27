@@ -16,10 +16,10 @@ public class HomeController : Controller
     public IActionResult GuardarRopa(ropa ropa)
     {
         int ropaAgregadas = BD.agregarRopa(ropa);
-        if (ropaAgregadas == 1) ViewBag.MensajeConfirmacion = "Usted agrego un nuevo jugador ";
+        if (ropaAgregadas == 1) ViewBag.MensajeConfirmacion = "Usted agrego una nueva prenda ";
         else ViewBag.MensajeConfirmacion = "Error, intentelo de nuevo!";
         VerDetalleMarca(ropa.IdMarca);
-        return View("VerDetalleMarca");
+        return View("agregarRopa");
     }
 
     public IActionResult EliminarPrenda(int IdRopa , int IdMarca)

@@ -2,19 +2,14 @@
     ViewData["Title"] = "AgregarRopa";
 }
 
- <form>
-     <input type="hidden" name="IdRopa">|
-     <h5>Agregue una foto de la indumentaria:</h5>
-     <input type="file" name="Foto">
-     <h5>Agregue un nombre de la indumentaria:</h5>
-     <input type="text" name="Nombre">
-     <h5>Agregue una descripcion de la indumentaria:</h5>
-     <input type="text" name="descripcion">
-     <h5>Agregue un precio de la indumentaria:</h5>
-     <input type="text" name="precio">
+ <form method="post" action='@Url.Action("GuardarRopa","home")' enctype="multipart/form-data">
 
- </form>
-
-     <input type="hidden" name="#" value="1">
-    <input type="submit" value="Aceptar">
+    <input type="text" name="Nombre" placeholder="Nombre">
+    <input type="text" name="precio" placeholder="precio">
+    <input type="text" name="descripcion" placeholder="descripcion">
+    <input type="file" name="Foto" placeholder="Subí la foto de la prenda"><br>
+    <input type="text" name="IdMarca" placeholder="1=balenciaga  2=Louis Vuitton  3=YSL  4=Versace">
+    <input Type="submit" value="Guardar Ropa">
+</form>
+    
     
