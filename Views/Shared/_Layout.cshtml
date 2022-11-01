@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/TP9.styles.css" asp-append-version="true" />
         
     <center>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg " style="background-color: #2A1E07">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,16 +18,12 @@
             <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href='@Url.Action("agregarRopa","Home")'>agregarRopa <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+                </li>
+                @foreach(marca item in ViewBag.ListadoMarca)
+                {
+                   <center> <a class="nav-link" href='@Url.Action("VerDetalleMarca","Home", new {IdMarca = item.IdMarca})'>@item.Nombre</a></center>
+                }
+            
             </ul>
         </div>
         </nav>
@@ -40,7 +36,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted" style="background-color: #2A1E07">
         <div class="container">
             &copy; 2022 - TP9 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
