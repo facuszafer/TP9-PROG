@@ -17,7 +17,13 @@ namespace TP9
             _Foto = Foto;
             _Logo = Logo;
         }
-        public marca(){}
+         public marca()
+        {
+           _IdMarca = 0;
+            _Nombre = "";
+            _Foto = "";
+            _Logo = "";
+        }        
         public string Nombre
         {
             get{return _Nombre;}

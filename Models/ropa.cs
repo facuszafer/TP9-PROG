@@ -11,18 +11,7 @@ namespace TP9
         private string _Foto;
         private string _descripcion;
 
-
-         public ropa(int IdMarca, int IdRopa, string Nombre, float precio, string Foto, string descripcion)
-        {
-           _IdMarca = IdMarca;
-           _IdRopa = IdRopa;
-            _Nombre = Nombre;
-            _precio = precio;
-            _Foto = Foto;
-            _descripcion = descripcion;
-        }
-        public ropa(){}
-        public string Nombre
+         public string Nombre
         {
             get{return _Nombre;}
             set{_Nombre = value;}
@@ -51,6 +40,28 @@ namespace TP9
         {
             get{return _descripcion;}
             set{_descripcion = value;}
+        }
+    
+
+
+         public ropa(int IdMarca, int IdRopa, string Nombre, float precio, string Foto, string descripcion)
+        {
+           _IdMarca = IdMarca;
+           _IdRopa = IdRopa;
+            _Nombre = Nombre;
+            _precio = precio;
+            _Foto = Foto;
+            _descripcion = descripcion;
+        }
+
+        public ropa()
+        {
+           _IdMarca = 0;
+           _IdRopa = 0;
+            _Nombre = "";
+            _precio = 0;
+            _Foto = "";
+            _descripcion = "";
         }
     
     }
