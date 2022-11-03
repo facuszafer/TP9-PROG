@@ -8,7 +8,7 @@ namespace TP9
     
     public static class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-013;DataBase=TP9;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-010;DataBase=TP9;Trusted_Connection=True;";
 
         public static int agregarRopa(ropa rop)
         {
@@ -25,13 +25,14 @@ namespace TP9
 
         public static int AgregarMeGusta(int IdRopa)
         {
+            int nuevaRopa = 0;
             using(SqlConnection DB = new SqlConnection(_connectionString))
             {
                 string sql = "UPDATE ropa SET CantLikes=CantLikes+1 WHERE IdRopa=@pIdRopa";
                 nuevaRopa=DB.Execute(sql, new {pIdRopa = IdRopa });
             } 
             ropa UnaRopa = ListarRopa(IdRopa);
-            return UnaRopa.CantLikes;
+            return UnaRopa.cantLikes;
         }
 
         public static ropa ListarRopa(int IdRopa)

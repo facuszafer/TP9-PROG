@@ -10,7 +10,7 @@ function AgregarMeGusta(pIdRopa) {
     $.ajax({
         type: 'POST',
         dataType: 'JSON',
-        url: 'Home/AgregarMeGustaAjax',
+        url: 'AgregarMeGustaAjax',
         data: { idRopa: pIdRopa },
         success: function(response) {
             $("#CantidadLikes").html(response);
