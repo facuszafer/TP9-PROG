@@ -48,6 +48,7 @@ public class HomeController : Controller
     public IActionResult AgregarRopa(ropa IdMarca)
     {
         ViewBag.IdMarca = BD.agregarRopa(IdMarca);
+         ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
     }
     public IActionResult Index()
