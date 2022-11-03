@@ -35,6 +35,7 @@ public class HomeController : Controller
     {
         ViewBag.Marca = BD.ListarMarca(IdMarca);
         ViewBag.ListadoRopa = BD.ListarRopar(IdMarca);
+         ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
     }
     public marca VerDetalleMarcaAjax(int IdMarca)
@@ -42,9 +43,9 @@ public class HomeController : Controller
         ViewBag.Marca = BD.ListarMarca(IdMarca);
         return ViewBag.Marca;
     }
-    public IActionResult AgregarRopa(int IdMarca)
+    public IActionResult AgregarRopa(ropa IdMarca)
     {
-        ViewBag.IdMarca = IdMarca;
+        ViewBag.IdMarca = BD.agregarRopa(IdMarca);
         return View();
     }
     public IActionResult Index()

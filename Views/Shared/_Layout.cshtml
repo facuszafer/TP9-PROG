@@ -19,6 +19,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href='@Url.Action("agregarRopa","Home")'>agregarRopa <span class="sr-only">(current)</span></a>
                 </li>
+                
                 @foreach(marca item in ViewBag.ListadoMarca)
                 {
                    <center> <a class="nav-link" href='@Url.Action("VerDetalleMarca","Home", new {IdMarca = item.IdMarca})'>@item.Nombre</a></center>
