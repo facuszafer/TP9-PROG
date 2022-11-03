@@ -6,3 +6,16 @@ function VerDetalle(pDescripcion) {
     
     $("#descripcionMarca").html(pDescripcion);
 }
+function AgregarMeGusta(pIdRopa) {
+    $.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: 'Home/AgregarMeGustaAjax',
+        data: { idRopa: pIdRopa },
+        success: function(response) {
+            $("#CantidadLikes").html(response);
+        }
+    })    
+}
+
+

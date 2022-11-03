@@ -8,6 +8,10 @@
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalle('@item.descripcion')">
           descripcion
         </button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="AgregarMeGusta(@item.IdRopa)">
+          Me Gusta
+        </button>
+        <p id="CantidadLikes"></p>
         <h3><b>$@item.precio</b></h3>
 
       </div>
