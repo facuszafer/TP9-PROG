@@ -44,6 +44,12 @@ public class HomeController : Controller
         return Cantidad;
     }
 
+        public ropa VerDetalle(int precio)
+    {
+         ViewBag.ropa = BD.VerInfoPrecio(precio);
+        return ViewBag.ropa;
+    } 
+
 
     public IActionResult AgregarRopa(ropa IdMarca)
     {

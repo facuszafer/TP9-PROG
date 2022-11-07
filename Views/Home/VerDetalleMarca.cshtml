@@ -5,14 +5,14 @@
       <img src="/img/@item.Foto" class="card-img-top" alt="...">
       <div class="card-body">
         <h1 class="card-title"><u>@item.Nombre</u></h1>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalle('@item.descripcion')">
-          descripcion
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalle('@item.precio')">
+          precio
         </button>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="AgregarMeGusta(@item.IdRopa)">
           Me Gusta
         </button>
         <p id="CantidadLikes"></p>
-        <h3><b>$@item.precio</b></h3>
+        <h3><b>@item.descripcion</b></h3>
 
       </div>
     </div>
