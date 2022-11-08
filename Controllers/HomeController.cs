@@ -22,10 +22,10 @@ public class HomeController : Controller
         return View("agregarRopa");
     }
 
-    public IActionResult EliminarPrenda(int IdRopa , int IdMarca)
+    public IActionResult EliminarPrenda(int IdRopa, int IdMarca)
     {
         int ropaEliminada = BD.EliminarPrenda(IdRopa);
-        if(ropaEliminada == 0) ViewBag.MensajeConfirmacion = "Usted elimino un jugador ";
+        if (ropaEliminada == 0) ViewBag.MensajeConfirmacion = "Usted elimino un jugador ";
         else ViewBag.MensajeConfirmacion = "Error, intentelo de nuevo!";
         VerDetalleMarca(IdMarca);
         return View("VerDetalleMarca");
@@ -35,7 +35,7 @@ public class HomeController : Controller
     {
         ViewBag.Marca = BD.ListarMarca(IdMarca);
         ViewBag.ListadoRopa = BD.ListarRopar(IdMarca);
-         ViewBag.ListadoMarca = BD.ListarMarcas();
+        ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
     }
     public int AgregarMeGustaAjax(int IdRopa)
@@ -44,17 +44,17 @@ public class HomeController : Controller
         return Cantidad;
     }
 
-        public ropa VerDetalle(int precio)
+    public ropa VerDetalle(int IdRop)
     {
-         ViewBag.ropa = BD.VerInfoPrecio(precio);
+        ViewBag.ropa = BD.VerInfoPrecio(IdRop);
         return ViewBag.ropa;
-    } 
+    }
 
 
     public IActionResult AgregarRopa(ropa IdMarca)
     {
         ViewBag.IdMarca = BD.agregarRopa(IdMarca);
-         ViewBag.ListadoMarca = BD.ListarMarcas();
+        ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
     }
     public IActionResult Index()
