@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP9.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace TP9.Controllers;
 
@@ -8,9 +10,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private IWebHostEnvironment Environment;
+
+    public HomeController (ILogger<HomeController> logger, IWebHostEnvironment environment)
     {
         _logger = logger;
+
+        Environment = environment;
     }
 
     public IActionResult GuardarRopa(ropa ropa)
@@ -50,9 +56,18 @@ public class HomeController : Controller
         return ViewBag.ropa;
     } 
 
-
-    public IActionResult AgregarRopa(ropa IdMarca)
+    [HttpPost]
+    public IActionResult AgregarRopa(ropa IdMarca, IFormFile MyFile)
     {
+        if(MyFile.Length>0)
+        {
+            string wwwRootLocal = this.Environment.ContentRootPath + @"\wwwroot\" + MyFile.FileName;
+            using (var stream = System.IO.File.Create(wwwRootLocal))
+            {
+                MyFile.CopyToAsync(stream);
+            }
+        }
+        
         ViewBag.IdMarca = BD.agregarRopa(IdMarca);
          ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
