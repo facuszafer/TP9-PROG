@@ -19,14 +19,14 @@ public class HomeController : Controller
         Environment = environment;
     }
 
-    public IActionResult GuardarRopa(ropa ropa)
+  /*  public IActionResult GuardarRopa(ropa ropa)
     {
         int ropaAgregadas = BD.agregarRopa(ropa);
         if (ropaAgregadas == 1) ViewBag.MensajeConfirmacion = "Usted agrego una nueva prenda ";
         else ViewBag.MensajeConfirmacion = "Error, intentelo de nuevo!";
         VerDetalleMarca(ropa.IdMarca);
         return View("agregarRopa");
-    }
+    }*/
 
     public IActionResult EliminarPrenda(int IdRopa , int IdMarca)
     {
@@ -55,9 +55,15 @@ public class HomeController : Controller
          ViewBag.ropa = BD.VerInfoPrecio(precio);
         return ViewBag.ropa;
     } 
+    public IActionResult AgregarRopa()
+    {
+         ViewBag.ListadoMarca = BD.ListarMarcas();
+        return View();
+
+    }
 
     [HttpPost]
-    public IActionResult AgregarRopa(ropa IdMarca, IFormFile MyFile)
+    public IActionResult AgregarRopa(ropa UnaRopa, IFormFile MyFile)
     {
         if(MyFile.Length>0)
         {
@@ -65,10 +71,11 @@ public class HomeController : Controller
             using (var stream = System.IO.File.Create(wwwRootLocal))
             {
                 MyFile.CopyToAsync(stream);
+                UnaRopa.Foto = "/" + MyFile.FileName;
             }
         }
-        
-        ViewBag.IdMarca = BD.agregarRopa(IdMarca);
+
+        ViewBag.IdMarca = BD.agregarRopa(UnaRopa);
          ViewBag.ListadoMarca = BD.ListarMarcas();
         return View();
     }
