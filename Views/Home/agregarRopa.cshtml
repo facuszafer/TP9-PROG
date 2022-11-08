@@ -7,7 +7,12 @@
     <input type="text" name="precio" placeholder="precio">
     <input type="text" name="descripcion" placeholder="descripcion">
     <input type="file" name="Foto" placeholder="Subí la foto de la prenda"><br>
-    <input type="text" name="IdMarca" placeholder="1=balenciaga  2=Louis Vuitton  3=YSL  4=Versace">
+    <select name="IdMarca">
+        @foreach (marca item in ViewBag.ListadoMarca)
+        {
+            <option value='@item.IdMarca'>@item.Nombre</option>
+        }
+    </select>
     <input Type="submit" value="Guardar Ropa">
 </form>
     
