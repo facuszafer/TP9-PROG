@@ -5,13 +5,13 @@
       <img src="@item.Foto" class="card-img-top" alt="...">
       <div class="card-body">
         <h1 class="card-title"><u>@item.Nombre</u></h1>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalle('@item.precio')">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
           precio
         </button>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="AgregarMeGusta(@item.IdRopa)">
           Me Gusta
         </button>
-        <p id="CantidadLikes"></p>
+        <p id="CantidadLikes">0</p>
         <h3><b>@item.descripcion</b></h3>
 
       </div>
@@ -21,14 +21,8 @@
   <div class="modal fade" id="ModalRopa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="descripcionMarca">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body" id="descripcionMarca">
-          dsa
+        <div class="modal-body" id="precioMarca">
+          sad
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
