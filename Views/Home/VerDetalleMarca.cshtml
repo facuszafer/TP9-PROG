@@ -8,10 +8,10 @@
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
           precio
         </button>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="AgregarMeGusta(@item.IdRopa)">
-          Me Gusta
+        <button type="button" class="btn btn-danger" onclick="AgregarMeGusta(@item.IdRopa)">
+          Me gusta
         </button>
-        <p id="CantidadLikes">0</p>
+        <p id="CantidadLikes">❤ 0</p>
         <h3><b>@item.descripcion</b></h3>
 
       </div>
@@ -22,7 +22,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body" id="precioMarca">
-          sad
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
