@@ -1,19 +1,21 @@
 @{
     ViewData["Title"] = "AgregarRopa";
 }
+ <div class="agregarRop">
+     <form action='@Url.Action("AgregarRopa","Home")' method="POST"  enctype="multipart/form-data">
+        <input type="text" name="Nombre" placeholder="Nombre">
+         <input type="text" name="precio" placeholder="precio">
+        <input type="text" name="descripcion" placeholder="descripcion">
+         <input type="file" name="MyFile" placeholder="Subí la foto de la prenda"><br>
+          <select name="IdMarca">
+             @foreach (marca item in ViewBag.ListadoMarca)
+             {
+                 <option value='@item.IdMarca'>@item.Nombre</option>
+             }
+          </select>
+          <input Type="submit" value="Guardar Ropa">
+      </form>
+</div>  
 
- <form action='@Url.Action("AgregarRopa","Home")' method="POST"  enctype="multipart/form-data">
-    <input type="text" name="Nombre" placeholder="Nombre">
-    <input type="text" name="precio" placeholder="precio">
-    <input type="text" name="descripcion" placeholder="descripcion">
-    <input type="file" name="MyFile" placeholder="Subí la foto de la prenda"><br>
-    <select name="IdMarca">
-        @foreach (marca item in ViewBag.ListadoMarca)
-        {
-            <option value='@item.IdMarca'>@item.Nombre</option>
-        }
-    </select>
-    <input Type="submit" value="Guardar Ropa">
-</form>
-    
+
     

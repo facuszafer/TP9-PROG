@@ -28,4 +28,14 @@ function AgregarMeGusta(pIdRopa) {
     })    
 }
 
-
+function EliminarJugador(pIdRopa) {
+    $.ajax({
+        type: 'POST',
+        dataType: 'JSON',
+        url: '/Home/EliminarPrenda',
+        data: { idRopa: pIdRopa },
+        success: function(response) {
+            $("#EliminarPrenda")
+        }
+    })    
+}

@@ -13,7 +13,9 @@
         </button>
         <p id="CantidadLikes">0</p>
         <h3><b>@item.descripcion</b></h3>
-
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
+          Eliminar
+        </button>
       </div>
     </div>
   </div>
@@ -22,9 +24,10 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body" id="precioMarca">
-          sad
+          
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Eliminar la prenda</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>

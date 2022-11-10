@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="~/TP9.styles.css" asp-append-version="true" />
         
     <center>
-            <nav class="navbar navbar-expand-lg " style="background-color: #2A1E07">
+            <nav class="navbar navbar-expand-lg " style="background-color: #d3c1aa">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href='@Url.Action("Index","Home")'>Home <span class="sr-only">(current)</span></a>
+                </li>
             <li class="nav-item active">
                 <a class="nav-link" href='@Url.Action("agregarRopa","Home")'>agregarRopa <span class="sr-only">(current)</span></a>
                 </li>
@@ -31,13 +34,13 @@
 </center>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="background-color: #2A1E07">
+    <footer class="border-top footer text-muted" style="background-color: #d3c1aa">
         <div class="container">
             &copy; 2022 - TP9 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

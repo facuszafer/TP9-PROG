@@ -1,8 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-<div class= "body">
+<div class= "body-index">
   <h1><center>DROPS</center></h1>
+  @foreach(marca item in ViewBag.ListadoMarca)
+   {
+     <div class="card" style="width: 18rem;">
+      <img src="@item.Foto" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a href='@Url.Action("VerDetalleMarca","Home", new {IdMarca = item.IdMarca})'><u>@item.Nombre</u></a>
+      </div>
+    </div>
+   }
+
 </div>
 
 
