@@ -8,10 +8,10 @@
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
           precio
         </button>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="AgregarMeGusta(@item.IdRopa)">
-          Me Gusta
+        <button type="button" class="btn btn-danger" onclick="AgregarMeGusta(@item.IdRopa)">
+          Me gusta
         </button>
-        <p id="CantidadLikes">0</p>
+        <p id="CantidadLikes">❤ 0</p>
         <h3><b>@item.descripcion</b></h3>
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
           Eliminar

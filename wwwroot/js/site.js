@@ -9,20 +9,22 @@ function VerInfoPrecio(pPrecio) {
         url: '/Home/VerDetalle',
         data: {precio: pPrecio},
         success: function(response) {
-            $("#precioMarca").html(pPrecio);
+           $("#precioMarca").html(pPrecio);
         }
-    })
+   })
      
 }
+
 
 
 function AgregarMeGusta(pIdRopa) {
     $.ajax({
         type: 'POST',
         dataType: 'JSON',
-        url: '/Home/AgregarMeGustaAjax',
+        url: 'AgregarMeGustaAjax',
         data: { idRopa: pIdRopa },
         success: function(response) {
+            
             $("#CantidadLikes").html(response);
         }
     })    
