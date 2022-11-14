@@ -8,11 +8,7 @@ namespace TP9
 
     public static class BD
     {
-<<<<<<< HEAD
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-005 ;DataBase=TP9;Trusted_Connection=True;";
-=======
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-004;DataBase=TP9;Trusted_Connection=True;";
->>>>>>> 4f3692143d035f97eb8abf1144ea51f285854e4d
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-022 ;DataBase=TP9;Trusted_Connection=True;";
 
         public static int agregarRopa(ropa rop)
         {

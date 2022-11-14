@@ -3,16 +3,24 @@
 }
 <div class= "body-index">
   <h1><center>DROPS</center></h1>
-  @foreach(marca item in ViewBag.ListadoMarca)
-   {
-     <div class="card" style="width: 18rem;">
-      <img src="@item.Foto" class="card-img-top" alt="...">
-      <div class="card-body">
-        <a href='@Url.Action("VerDetalleMarca","Home", new {IdMarca = item.IdMarca})'><u>@item.Nombre</u></a>
-      </div>
+  <div class="container-sm">
+    <div class="row">
+      <img src="/img/slogan.PNG" class="rounded mx-auto d-block" alt="..." style="width: 50%">
     </div>
-   }
-
+   </div>
+  <div class= "row">
+    @foreach(marca item in ViewBag.ListadoMarca)
+    {
+      <div class="col">
+        <div class="card bg-transparent " style="width: 18rem; margin-top: 10%">
+          <img src="@item.Foto" class="card-img-top" alt="...">
+          <div class="card-body text-info">
+            <h3><center><a class="text-reset text-decoration-none" href='@Url.Action("VerDetalleMarca","Home", new {IdMarca = item.IdMarca})'>@item.Nombre</a></center></h3>
+          </div>
+        </div>
+      </div>
+    }
+   </div>
 </div>
 
 
