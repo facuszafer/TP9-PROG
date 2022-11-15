@@ -1,25 +1,31 @@
-@foreach (ropa item in ViewBag.ListadoRopa)
-{
-  <div class="col-md-8 ">
-    <div class="card" style="width: 18rem;">
-      <img src="@item.Foto" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h1 class="card-title"><u>@item.Nombre</u></h1>
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
-          precio
-        </button>
-        <button type="button" class="btn btn-danger" onclick="AgregarMeGusta(@item.IdRopa)">
-          Me gusta
-        </button>
-        <p id="CantidadLikes">❤ 0</p>
-        <h3><b>@item.descripcion</b></h3>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
-          Eliminar
-        </button>
-      </div>
-    </div>
-  </div>
-}
+
+<center><u class="text-light"><h1 class="text-uppercase text-light" style="">@ViewBag.Marca.Nombre</h1></u></center>
+
+<div class="row">
+      @foreach (ropa item in ViewBag.ListadoRopa)
+      {
+                  <div class="card mr-5" style="width: 15%; height:50%; margin-top: 10%; background-color:#d3c1aa;">
+                    <img src="@item.Foto" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h1 class="card-title"><u>@item.Nombre</u></h1>
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
+                        precio
+                      </button>
+                      <button type="button" class="btn btn-danger" onclick="AgregarMeGusta(@item.IdRopa)">
+                        Me gusta
+                      </button>
+                      <p id="CantidadLikes">❤ 0</p>
+                      <h3><b>@item.descripcion</b></h3>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
+                        Eliminar
+                      </button>
+                    </div>
+                  </div>
+            
+        
+      }
+</div>
+
   <div class="modal fade" id="ModalRopa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
