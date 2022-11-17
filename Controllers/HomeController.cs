@@ -28,13 +28,10 @@ public class HomeController : Controller
         return View("agregarRopa");
     }*/
 
-    public IActionResult EliminarPrenda(int IdRopa, int IdMarca)
+    public int EliminarPrenda(int IdRopa, int pIdMarca)
     {
         int ropaEliminada = BD.EliminarPrenda(IdRopa);
-        if (ropaEliminada == 0) ViewBag.MensajeConfirmacion = "Usted elimino un jugador ";
-        else ViewBag.MensajeConfirmacion = "Error, intentelo de nuevo!";
-        VerDetalleMarca(IdMarca);
-        return View("VerDetalleMarca");
+        return pIdMarca;
     }
 
     public IActionResult VerDetalleMarca(int IdMarca)

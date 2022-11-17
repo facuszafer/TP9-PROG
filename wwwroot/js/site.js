@@ -30,14 +30,23 @@ function AgregarMeGusta(pIdRopa) {
     })    
 }
 
-function EliminarJugador(pIdRopa) {
+function EliminarPrenda(idRopa, idMarca) {
+    $("#precioMarca").html("Estas seguro que queres eliminar este Articulo?");
+    $("#BotonEliminar").css("display","block");
+    $("#BotonEliminar").click(EliminarDefinitivo(idRopa,idMarca));
+    
+}
+function EliminarDefinitivo(pidRopa,pidMarca)
+{
     $.ajax({
         type: 'POST',
         dataType: 'JSON',
         url: '/Home/EliminarPrenda',
-        data: { idRopa: pIdRopa },
+        data: { IdRopa: pidRopa, pidMarca:pidMarca },
         success: function(response) {
-            $("#EliminarPrenda")
         }
-    })    
+    })
 }
+
+function onSuccess(idMarca) {
+};

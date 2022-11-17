@@ -8,7 +8,7 @@ namespace TP9
 
     public static class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-037 ;DataBase=TP9;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-008 ;DataBase=TP9;Trusted_Connection=True;";
 
         public static int agregarRopa(ropa rop)
         {
@@ -54,7 +54,7 @@ namespace TP9
 
             using (SqlConnection DB = new SqlConnection(_connectionString))
             {
-                string sql = "DELETE from ropa WHERE IdRopa = pIdRop";
+                string sql = "DELETE from ropa WHERE IdRopa = @pIdRop";
                 ropaEliminada = DB.Execute(sql, new { pIdRop = IdRop });
             }
             return ropaEliminada;

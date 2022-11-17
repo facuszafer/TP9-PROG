@@ -16,7 +16,7 @@
                       </button>
                       <p id="CantidadLikes">❤ 0</p>
                       <h3><b>@item.descripcion</b></h3>
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarPrenda(@item.IdRopa, @item.IdMarca)">
                         Eliminar
                       </button>
                     </div>
@@ -33,7 +33,7 @@
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Eliminar la prenda</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="display:none;" id="BotonEliminar">Eliminar la prenda</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
