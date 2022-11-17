@@ -1,6 +1,7 @@
 
 <center><u class="text-light"><h1 class="text-uppercase text-light" style="">@ViewBag.Marca.Nombre</h1></u></center>
 
+
 <div class="row">
       @foreach (ropa item in ViewBag.ListadoRopa)
       {
@@ -8,15 +9,16 @@
                     <img src="@item.Foto" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h1 class="card-title"><u>@item.Nombre</u></h1>
-                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerInfoPrecio(@item.precio)">
-                        precio
+                      <h2 id="DescripcionOculta_@item.IdRopa" style="display:none;">@item.descripcion</h2>
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalRopa" onclick="VerDetalleRopa(@item.IdRopa)">
+                        ver descripcion
                       </button>
                       <button type="button" class="btn btn-danger" onclick="AgregarMeGusta(@item.IdRopa)">
                         Me gusta
                       </button>
-                      <p id="CantidadLikes">❤ 0</p>
-                      <h3><b>@item.descripcion</b></h3>
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarJugador(@item.IdRopa)">
+                      <p id="CantidadLikes_@item.IdRopa">❤ @item.cantLikes</p>
+                      <p> $ @item.precio </p>
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalRopa" onclick="EliminarRopa(@item.IdRopa)">
                         Eliminar
                       </button>
                     </div>
@@ -26,19 +28,22 @@
       }
 </div>
 
+                                                  <!-- MODAL -->
   <div class="modal fade" id="ModalRopa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-body" id="precioMarca">
-          
+        <div class="modal-body" id="descripcionRopa">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Eliminar la prenda</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
 
 <!--<form>
   <input type="hidden" name="IdRopa">|

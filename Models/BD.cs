@@ -8,7 +8,7 @@ namespace TP9
 
     public static class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-037 ;DataBase=TP9;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-007;DataBase=TP9;Trusted_Connection=True;";
 
         public static int agregarRopa(ropa rop)
         {
@@ -98,15 +98,15 @@ namespace TP9
             return _ListadoRopa;
         }
 
-        public static ropa VerInfoPrecio(int IdRop)
+        public static ropa VerInfoDesc(string descripcion)
         {
-            ropa precioActual = null;
+            ropa desc = null;
             using (SqlConnection DB = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM ropa WHERE IdRopa = @pIdRopa";
-                precioActual = DB.QueryFirstOrDefault<ropa>(sql, new { pIdRopa = IdRop });
+                string sql = "SELECT * FROM ropa WHERE descripcion = @pdescripcion";
+                desc = DB.QueryFirstOrDefault<ropa>(sql, new { pdescripcion = descripcion });
             }
-            return precioActual;
+            return desc;
         }
 
 
