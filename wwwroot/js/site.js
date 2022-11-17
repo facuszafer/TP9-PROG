@@ -7,7 +7,8 @@
 function VerDetalleRopa(idRopa)
 {
     var desc=$("#DescripcionOculta_"+idRopa).html();
-    $("#descripcionRopa").html(desc);
+    $("#BotonEliminar").css("display","none");
+    $("#DescripcionBody").html(desc);
 }
 
 
@@ -25,8 +26,8 @@ function AgregarMeGusta(pIdRopa) {
     })    
 }
 
-function EliminarPrenda(idRopa, idMarca) {
-    $("#precioMarca").html("Estas seguro que queres eliminar este Articulo?");
+function EliminarRopa(idRopa, idMarca) {
+    $("#DescripcionBody").html("Estas seguro que queres eliminar este Articulo?");
     $("#BotonEliminar").css("display","block");
     $("#BotonEliminar").click(EliminarDefinitivo(idRopa,idMarca));
     
