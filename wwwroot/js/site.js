@@ -2,17 +2,12 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-function VerInfoPrecio(pPrecio) {
-    $.ajax({
-        type: 'POST',
-        dataType: 'JSON',
-        url: '/Home/VerDetalle',
-        data: {precio: pPrecio},
-        success: function(response) {
-           $("#precioMarca").html(pPrecio);
-        }
-   })
      
+
+function VerDetalleRopa(idRopa)
+{
+    var desc=$("#DescripcionOculta_"+idRopa).html();
+    $("#descripcionRopa").html(desc);
 }
 
 
@@ -25,7 +20,7 @@ function AgregarMeGusta(pIdRopa) {
         data: { idRopa: pIdRopa },
         success: function(response) {
             
-            $("#CantidadLikes").html(response);
+            $("#CantidadLikes_"+pIdRopa).html("❤ " + response);
         }
     })    
 }
